@@ -306,16 +306,18 @@
     <div class="cool-md-12 my-5 justify-content-center" id="inputbox">
       <h1>Got any questions or messages for us?</h1>
       <h5>Get in touch with us now to join the best English speaking course</h5>
+      <form id="submit-form" action="">
       <li>
-        <input type="text" placeholder="First NAme">
-      <input type="text" placeholder="Second Name">
+        <input type="text" name="Name" placeholder="First NAme" required>
+      <input type="text" name="SName" placeholder="Second Name">
       </li>
       <li>
-        <input type="text" placeholder="Phone">
-      <input type="text" placeholder="Email">
+        <input type="number" name="Phone" placeholder="Phone" required>
+      <input type="email" name="Email" placeholder="Email">
       </li>
-      <input type="text" placeholder="Message" id="message">
-      <button>Submit</button>
+      <input type="text" name="Message" placeholder="Message" id="message"required>
+      <button type="submit" id="submit">Submit</button>
+    </form>
       
     </div>
   </div>
@@ -397,7 +399,7 @@
     $("#submit-form").submit((e)=>{
         e.preventDefault()
         $.ajax({
-            url:"https://script.google.com/macros/s/AKfycbxv1kG5sIyxiUHyh6gURPBAvnRjGq1N7ifAaLxcOB16xuynn54uw0CXiDXQC2fBX6gUrg/exec",
+            url:"https://script.google.com/macros/s/AKfycbwDcs1il3y6pr6J2Q5l7HUmqRt8Udym7qb_aCb_sgPOb0Z03PcHl6CBv7VGn3BfT6x92g/exec",
             data:$("#submit-form").serialize(),
             method:"post",
             success:function (response){
